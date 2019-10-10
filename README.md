@@ -31,7 +31,7 @@ const db = new HFDB({
 
 ### Docs
 
-Refer to the `examples/` folder for executable examples. For information on the available model methods, check the documentation for [bfx-hf-models](https://github.com/bitfinexcom/bfx-hf-models/tree/master/docs) or refer to `docs/requirements.md` for a specification of what a valid adapter must provide.
+[Refer to the `examples/`](/examples) folder for executable examples. For information on the available model methods, check the documentation for [bfx-hf-models](https://github.com/bitfinexcom/bfx-hf-models/tree/master/docs) or [refer to `docs/requirements.md`](/docs/requirements.md) for a specification of what a valid adapter must provide.
 
 ### Contributing
 
