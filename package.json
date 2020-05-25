@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-models-adapter-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HF DB adapter template",
   "main": "index.js",
   "directories": {
