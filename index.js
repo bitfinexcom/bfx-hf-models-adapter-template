@@ -1,22 +1,39 @@
 'use strict'
 
-const mapMethods = require('./lib/map_methods')
-const genericMethods = require('./lib/generic_methods')
-const collectionMethods = require('./lib/collection_methods')
+const HFDBTemplateAdapter = require('./lib')
 
 /**
- * DB init method; can take any arguments, but must return the example object
- * structure.
+ * This module serves as a template for creating new database adapters for the
+ * honey framework. All adapters must implement the methods broken out here,
+ * and provide a custom initialisation function. This system enables the use of
+ * the Honey Framework with multiple database backends. The only requirement
+ * for valid adapters is that all method signatures remain the same, and all
+ * return values are promises that resolve to the standardized values. All
+ * methods are asynchronous.
  *
- * @return {Object} hfDBAdapter
+ * Works with {@link external:bfx-hf-models}
+ *
+ * @license Apache-2.0
+ * @module bfx-hf-models-adapter-template
+ * @function
+ * @returns {bfx-hf-models.DBAdapter} adapter
+ *
+ * @example
+ * const HFDBTemplateAdapter = require('bfx-hf-models-adapter-template')
+ * const { schema: HFDBBitfinexSchema } = require('bfx-hf-ext-plugin-bitfinex')
+ * const HFDB = require('bfx-hf-models')
+ *
+ * const db = new HFDB({
+ *   schema: HFDBBitfinexSchema,
+ *   adapter: HFDBTemplateAdapter()
+ * })
+ *
+ * // db is now a valid bfx-hf-models database instance
  */
-module.exports = () => {
-  return {
-    db: {}, // DB object provided to all methods
-    name: 'template',
-    close: () => {}, // should close the DB connection
-    mapMethods,
-    collectionMethods,
-    genericMethods
-  }
-}
+
+/**
+ * @external bfx-hf-models
+ * @see https://github.com/bitfinexcom/bfx-hf-models
+ */
+
+module.exports = HFDBTemplateAdapter
