@@ -1,3 +1,8 @@
+# 1.0.3
+- meta: bump deps
+- meta: normalize eslint config
+- refactor: improve doclets
+
 # 1.0.2
 - fix: map method create() signature
 - fix: collection method insertSorted() removed, unique to lowdb

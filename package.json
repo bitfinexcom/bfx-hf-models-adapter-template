@@ -1,10 +1,18 @@
 {
   "name": "bfx-hf-models-adapter-template",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "HF DB adapter template",
   "main": "index.js",
   "directories": {
     "lib": "lib"
+  },
+  "engines": {
+    "node": ">=8.3.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm test"
+    }
   },
   "author": "Bitfinex",
   "contributors": [
@@ -21,10 +29,10 @@
     "url": "https://github.com/f3rno/bfx-hf-models-adapter-template/issues"
   },
   "scripts": {
-    "lint": "standard",
+    "lint": "./node_modules/.bin/eslint lib/ examples/ test/ index.js",
     "test": "npm run lint && npm run unit",
-    "unit": "NODE_ENV=test istanbul cover _mocha -- -R spec -b --recursive",
-    "test-without-coverage": "NODE_ENV=test mocha -R spec -b --recursive"
+    "unit": "NODE_ENV=test nyc --check-coverage --lines 90 --branches 60 --functions 90 --statements 90 --reporter=lcov --reporter=html mocha -b --recursive",
+    "docs": "rm -rf docs/*.md && ./node_modules/.bin/jsdoc2md -f index.js 'lib/**/*.js' > docs/reference.md"
   },
   "keywords": [
     "honey framework",
@@ -36,8 +44,18 @@
     "bfx-hf-ext-plugin-dummy": "^1.0.0",
     "bfx-hf-models": "^2.1.0",
     "chai": "^4.2.0",
-    "istanbul": "^0.4.5",
-    "mocha": "^6.2.0",
-    "standard": "^14.2.0"
+    "eslint": "^7.2.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-plugin-import": "^2.20.1",
+    "eslint-plugin-jsdoc": "^27.0.4",
+    "eslint-plugin-lodash": "^7.1.0",
+    "eslint-plugin-mocha": "^7.0.1",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.3",
+    "jsdoc-to-markdown": "^6.0.1",
+    "mocha": "^7.1.0",
+    "nyc": "^15.0.0"
   }
 }

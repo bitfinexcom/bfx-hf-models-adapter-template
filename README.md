@@ -2,9 +2,16 @@
 
 [![Build Status](https://travis-ci.org/bitfinexcom/bfx-hf-models-adapter-template.svg?branch=master)](https://travis-ci.org/bitfinexcom/bfx-hf-models-adapter-template)
 
-This repo serves as a template for creating new database adapters for the honey framework. All adapters must implement the methods broken out here, and provide a custom initialisation function. This system enables the use of the Honey Framework with multiple database backends. The only requirement for valid adapters is that all method signatures remain the same, and all return values are promises that resolve to the standardized values. All methods are asynchronous.
+This repo serves as a template for creating new database adapters for the honey
+framework. All adapters must implement the methods broken out here, and provide
+a custom initialisation function. This system enables the use of the Honey
+Framework with multiple database backends. The only requirement for valid
+adapters is that all method signatures remain the same, and all return values
+are promises that resolve to the standardized values. All methods are
+asynchronous.
 
 ### Features
+
 * Provides a template enumerating all required methods for `bfx-hf-models` compatibility
 
 ### Installation
@@ -14,7 +21,10 @@ npm i --save bfx-hf-models-adapter-template
 ```
 
 ### Quickstart & Example
-Although the resulting DB instance is useless as it does not have an actual DB backend to write/read data, the following example illustrates how to pass an adapter to a `bfx-hf-models` instance:
+
+Although the resulting DB instance is useless as it does not have an actual DB
+backend to write/read data, the following example illustrates how to pass an
+adapter to a `bfx-hf-models` instance:
 
 ```js
 const HFDBTemplateAdapter = require('bfx-hf-models-adapter-template')
@@ -31,7 +41,11 @@ const db = new HFDB({
 
 ### Docs
 
-[Refer to the `examples/`](/examples) folder for executable examples. For information on the available model methods, check the documentation for [bfx-hf-models](https://github.com/bitfinexcom/bfx-hf-models/tree/master/docs) or [refer to `docs/requirements.md`](/docs/requirements.md) for a specification of what a valid adapter must provide.
+API documentation can be found in [`docs/reference.md`](docs/reference.md), and
+examples in the [`examples`](examples) folder.
+
+For information on the available model methods, check the documentation for
+[bfx-hf-models](https://github.com/bitfinexcom/bfx-hf-models/tree/master/docs)
 
 ### Contributing
 
