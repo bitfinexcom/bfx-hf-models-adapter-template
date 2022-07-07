@@ -1,6 +1,6 @@
 {
   "name": "bfx-hf-models-adapter-template",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "HF DB adapter template",
   "main": "index.js",
   "directories": {
@@ -33,8 +33,8 @@
     "BTC"
   ],
   "devDependencies": {
-    "bfx-hf-ext-plugin-dummy": "^1.0.0",
-    "bfx-hf-models": "^2.1.0",
+    "bfx-hf-ext-plugin-dummy": "git+https://github.com/bitfinexcom/bfx-hf-ext-plugin-dummy.git#v1.0.0",
+    "bfx-hf-models": "git+https://github.com/bitfinexcom/bfx-hf-models.git#v2.1.0",
     "chai": "^4.2.0",
     "istanbul": "^0.4.5",
     "mocha": "^6.2.0",
